@@ -26,6 +26,7 @@ func (c *Computer) nextTicket() int64 {
 
 // AcceptOrder will instruct the computer to send the orders to the machine workers.
 func (c *Computer) AcceptOrder(o *Order) {
+	// Currently we just sleep but the idea is that we will send a request for cooked food.
 	time.Sleep(time.Millisecond * 10)
 	o.Ready <- true
 }

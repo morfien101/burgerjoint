@@ -37,7 +37,7 @@ func TestCustomerWaitTimer(t *testing.T) {
 	stop := customer.StartWait()
 	time.Sleep(time.Millisecond * 10)
 	stop()
-	if customer.TimeWaiting() > time.Millisecond*10 {
+	if customer.TimeWaiting() < time.Millisecond*10 {
 		t.Logf("Customer TimeWaiting returned a number smaller than 10ms. Got %s", customer.TimeWaiting())
 		t.Fail()
 	}
